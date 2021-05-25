@@ -54,7 +54,7 @@ h1{
  border-radius: 5px;
  width: 100%;
  font-size: 16px;
-
+position: relative;
 }
 .form-control input:focus{
     outline: 0;
@@ -62,20 +62,34 @@ h1{
 }
 small{
     position: absolute;
-    left: 260px;
+    /* left: 140px; */
     /* top: 10px; */
     visibility: hidden;
 }
+.errorText{
+    color: orangered;
+    font-weight: bold;
+}
+
+.successText{
+    color: var(--main-color);
+    font-weight: bold;
+}
+
 .form-control.error small{
 visibility: visible;
 }
+
+.form-control.success small{
+    visibility: visible;
+    }
 
 .form-control.error input{
     border-color: var(--error-color);
     }
 
 .form-control.success input{
-    border-color: var(--success-color);
+    border-color: var(--main-color);
     }  
 
 button{
@@ -88,6 +102,7 @@ button{
     margin-top: 12px;
     margin-left: 10px;
     font-size: 16px;
+    cursor: pointer;
 
 }
 button:focus{

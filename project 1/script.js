@@ -6,36 +6,62 @@ const form = document.getElementById("form");
 
 
 function Errorcheck(a,b){
-    //    a.parentElement.className="flow-control error";
+   
           const formcontrol= a.parentElement;
-          formcontrol.className="flow-control error";
-       const m=a.querySelector("small");
-       m.innerText=b;
+          formcontrol.className="form-control error";
+       const small=formcontrol.querySelector("small");
+       small.innerText=b;
+       small.className="errorText";
    }
 
    function successcheck(a,b){
-    // a.parentElement.className="flow-control success";
+    
     const formcontrol= a.parentElement;
-    formcontrol.className="flow-control success";
-    const m=a.querySelector("small");
-    m.innerText=b;
+    formcontrol.className="form-control success";
+    const small=formcontrol.querySelector("small");
+    small.innerText=b;
+    small.className="successText";
 }   
 
-form.addEventListener("submit",function(e){
+form.addEventListener('submit',function(e){
+    console.log("hello world");
     e.preventDefault();
+    //  console.log(username.value);
 
-    if(username.value==""){
+    //statement for username validation.
+    if(username.value ===''){
        Errorcheck(username,"Username is required");
     }else{
-        successcheck(username,"Username is Valid")
+        successcheck(username,"Username is Valid");
     }
+    
+    //statement for email validation.
+    if(email.value ===''){
+        Errorcheck(email,"email is required");
+     }else{
+         successcheck(email,"email is Valid");
+     }
+
+     //statement for password validation.
+     if(password.value ===''){
+        Errorcheck(password,"password is required");
+     }else{
+         successcheck(password,"password is Valid");
+     }
+     
+
+     //statement for password2 validation.
+     if(password2.value ===''){
+        Errorcheck(password2,"Confirm your Password");
+     }else{
+         successcheck(password2,"password is Valid");
+     }
+
     // else if(username.value<8){
     //     lengthcheck(username,"Name characters must be 8 or greater");
-   // }
+    // }
     // else if(username.value==>8){
     //     successcheck(username,"Valid Username");
-   // }
-
-    
+    // }   
 }
 );
